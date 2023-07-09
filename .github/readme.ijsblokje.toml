@@ -1,0 +1,8 @@
+[project]
+icon = "https://ijskoud.dev/assets/svg/logo.svg"
+icon_width = "100px"
+version = "1.0.0"
+
+[variables]
+information = "Monorepo template for big projects 🏗️"
+installation = "To use this template, you will need the following: `yarn` and `node >= 18.16.0`."

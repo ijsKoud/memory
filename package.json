@@ -1,0 +1,46 @@
+{
+	"name": "monorepo",
+	"version": "1.0.0",
+	"description": "Monorepo template for big projects 🏗️",
+	"author": "ijsKoud <github@ijskoud.dev>",
+	"license": "MIT",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"homepage": "https://github.com/ijsKoud/monorepo",
+	"scripts": {
+		"build": "turbo run build",
+		"start:dev": "turbo run dev --parallel",
+		"lint": "turbo run lint",
+		"postinstall": "is-ci || husky install"
+	},
+	"resolutions": {
+		"@typescript-eslint/eslint-plugin": "^5.61.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.6.6",
+		"@commitlint/config-angular": "^17.6.6",
+		"@sapphire/eslint-config": "^4.4.3",
+		"@sapphire/prettier-config": "^1.4.5",
+		"@sapphire/ts-config": "^4.0.0",
+		"@types/node": "^18.16.19",
+		"@typescript-eslint/eslint-plugin": "^5.61.0",
+		"@typescript-eslint/parser": "^5.61.0",
+		"eslint": "^8.44.0",
+		"eslint-config-next": "^13.4.9",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"husky": "^8.0.3",
+		"is-ci": "^3.0.1",
+		"lint-staged": "^13.2.3",
+		"nodemon": "^3.0.1",
+		"prettier": "^3.0.0",
+		"turbo": "^1.10.7",
+		"typescript": "5.1.6"
+	},
+	"engines": {
+		"node": ">= v18.16.0"
+	},
+	"packageManager": "yarn@3.6.1"
+}
