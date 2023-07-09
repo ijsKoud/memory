@@ -1,5 +1,5 @@
 {
-	"name": "@monorepo/ui",
+	"name": "@memory/ui",
 	"type": "module",
 	"version": "0.0.0",
 	"main": "./src/index.tsx",
@@ -7,6 +7,11 @@
 	"license": "MIT",
 	"scripts": {
 		"lint": "TIMING=1 eslint"
+	},
+	"dependencies": {
+		"@memory/constants": "*",
+		"@memory/hooks": "*",
+		"@memory/utils": "*"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.14",
