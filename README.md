@@ -1,8 +1,8 @@
 <div align="center">
     <img src="https://ijskoud.dev/assets/svg/logo.svg" width="100px" />
-    <h1>monorepo</h1>
+    <h1>memory</h1>
   
-  <p>Monorepo template for big projects 🏗️</p>
+  <p>Don't forget, do instead 🧠</p>
   
   <p align="center">
     <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg" />
