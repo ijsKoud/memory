@@ -1,7 +1,6 @@
 import { NunitoFont, NunitoSansFont } from "@memory/constants";
 import { UseTime } from "@memory/hooks";
-import React from "react";
-import { Container } from "../blocks";
+import { Container } from "../../blocks";
 
 export interface ClockProps {
 	/** Whether the clock is 12 hours or 24 hours */
@@ -19,19 +18,19 @@ const TimeDivider: React.FC = () => (
  * @param props The required props
  * @returns
  */
-export const Clock: React.FC<ClockProps> = ({ fullDay }) => {
+export const FullScreenClock: React.FC<ClockProps> = ({ fullDay }) => {
 	const { date, day, seconds, month } = UseTime();
 	const timezone = date.getHours() - 12 >= 0 ? "pm" : "am";
 	const dateSuffix = ["st", "nd", "rd", ...Array(31 - 3).fill("th")][date.getDate()];
 	const hours = fullDay ? date.getHours() : date.getHours() - (timezone === "am" ? 0 : 12);
 
 	return (
-		<Container>
-			<p className="capitalize -mb-3 text-4 w-fit" style={NunitoSansFont.style}>
+		<Container className="bg-component-background p-8 rounded-xl">
+			<p className="capitalize -mb-3 text-6 w-fit text-red-500" style={NunitoFont.style}>
 				{month} the {date.getDate()}
 				{dateSuffix}
 			</p>
-			<h1 className="capitalize text-10 font-medium flex items-center gap-2" style={NunitoSansFont.style}>
+			<h1 className="capitalize text-12 font-semibold flex items-center gap-2" style={NunitoSansFont.style}>
 				{[
 					day.slice(0, 3).toUpperCase(),
 					hours.toString().padStart(2, "0"),

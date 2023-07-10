@@ -1,2 +1,3 @@
 export * from "./WelcomeTitle";
-export * from "./Clock";
+export * from "./clock";
+export * from "./Searchbar";
