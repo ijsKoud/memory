@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/globals.css";
 
 import { NunitoFont } from "@memory/constants";
-import { BoundaryContainer, Container } from "@memory/ui";
+import { Container } from "@memory/ui";
 import type { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
