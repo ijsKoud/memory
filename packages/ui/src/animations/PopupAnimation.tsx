@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type HTMLMotionProps } from "framer-motion";
 import React from "react";
 
 interface Props {
@@ -6,9 +6,9 @@ interface Props {
 	visible: boolean;
 }
 
-export type PopupAnimationProps = React.PropsWithChildren<Props>;
+export type PopupAnimationProps = React.PropsWithChildren<HTMLMotionProps<"div"> & Props>;
 
-export const PopupAnimation: React.FC<PopupAnimationProps> = ({ children, visible }) => {
+export const PopupAnimation: React.FC<PopupAnimationProps> = ({ children, visible, ...props }) => {
 	return (
 		<AnimatePresence mode="sync">
 			{visible && (
@@ -20,6 +20,7 @@ export const PopupAnimation: React.FC<PopupAnimationProps> = ({ children, visibl
 						duration: 0.8,
 						ease: [0, 0.71, 0.2, 1.01]
 					}}
+					{...props}
 				>
 					{children}
 				</motion.div>
