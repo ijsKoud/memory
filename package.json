@@ -1,14 +1,14 @@
 {
-	"name": "monorepo",
+	"name": "memory",
 	"version": "1.0.0",
-	"description": "Monorepo template for big projects 🏗️",
+	"description": "Don't forget, do instead 🧠",
 	"author": "ijsKoud <github@ijskoud.dev>",
 	"license": "MIT",
 	"workspaces": [
 		"apps/*",
 		"packages/*"
 	],
-	"homepage": "https://github.com/ijsKoud/monorepo",
+	"homepage": "https://github.com/ijsKoud/memory",
 	"scripts": {
 		"build": "turbo run build",
 		"start:dev": "turbo run dev --parallel",

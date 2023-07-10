@@ -278,6 +278,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/is-prop-valid@npm:^0.8.2":
+  version: 0.8.8
+  resolution: "@emotion/is-prop-valid@npm:0.8.8"
+  dependencies:
+    "@emotion/memoize": 0.7.4
+  checksum: bb7ec6d48c572c540e24e47cc94fc2f8dec2d6a342ae97bc9c8b6388d9b8d283862672172a1bb62d335c02662afe6291e10c71e9b8642664a8b43416cdceffac
+  languageName: node
+  linkType: hard
+
+"@emotion/memoize@npm:0.7.4":
+  version: 0.7.4
+  resolution: "@emotion/memoize@npm:0.7.4"
+  checksum: 4e3920d4ec95995657a37beb43d3f4b7d89fed6caa2b173a4c04d10482d089d5c3ea50bbc96618d918b020f26ed6e9c4026bbd45433566576c1f7b056c3271dc
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.2.0
   resolution: "@eslint-community/eslint-utils@npm:4.2.0"
@@ -418,14 +434,55 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monorepo/ui@*, @monorepo/ui@workspace:packages/ui":
+"@memory/constants@*, @memory/constants@workspace:packages/constants":
   version: 0.0.0-use.local
-  resolution: "@monorepo/ui@workspace:packages/ui"
+  resolution: "@memory/constants@workspace:packages/constants"
   dependencies:
     "@types/react": ^18.2.14
     "@types/react-dom": ^18.2.6
     eslint: ^8.44.0
+    next: 13.4.9
     react: ^18.2.0
+    react-dom: 18.2.0
+    typescript: ^5.1.6
+  languageName: unknown
+  linkType: soft
+
+"@memory/hooks@*, @memory/hooks@workspace:packages/hooks":
+  version: 0.0.0-use.local
+  resolution: "@memory/hooks@workspace:packages/hooks"
+  dependencies:
+    "@types/react": ^18.2.14
+    "@types/react-dom": ^18.2.6
+    eslint: ^8.44.0
+    next: 13.4.9
+    react: ^18.2.0
+    react-dom: 18.2.0
+    typescript: ^5.1.6
+  languageName: unknown
+  linkType: soft
+
+"@memory/ui@*, @memory/ui@workspace:packages/ui":
+  version: 0.0.0-use.local
+  resolution: "@memory/ui@workspace:packages/ui"
+  dependencies:
+    "@memory/constants": "*"
+    "@memory/hooks": "*"
+    "@memory/utils": "*"
+    "@types/react": ^18.2.14
+    "@types/react-dom": ^18.2.6
+    eslint: ^8.44.0
+    framer-motion: ^10.12.18
+    react: ^18.2.0
+    typescript: ^5.1.6
+  languageName: unknown
+  linkType: soft
+
+"@memory/utils@*, @memory/utils@workspace:packages/utils":
+  version: 0.0.0-use.local
+  resolution: "@memory/utils@workspace:packages/utils"
+  dependencies:
+    eslint: ^8.44.0
     typescript: ^5.1.6
   languageName: unknown
   linkType: soft
@@ -2469,6 +2526,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion@npm:^10.12.18":
+  version: 10.12.18
+  resolution: "framer-motion@npm:10.12.18"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    tslib: ^2.4.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 71539be1175de80d2266702069bb3c4f0150eb3e28f0e32307e10c217410d5ee350b025d48a86c3144caf2d0e0e1dd95e33ed886a14466bc1e763e52d4cd6157
+  languageName: node
+  linkType: hard
+
 "fs-extra@npm:^11.0.0":
   version: 11.1.0
   resolution: "fs-extra@npm:11.1.0"
@@ -3654,6 +3732,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"memory@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "memory@workspace:."
+  dependencies:
+    "@commitlint/cli": ^17.6.6
+    "@commitlint/config-angular": ^17.6.6
+    "@sapphire/eslint-config": ^4.4.3
+    "@sapphire/prettier-config": ^1.4.5
+    "@sapphire/ts-config": ^4.0.0
+    "@types/node": ^18.16.19
+    "@typescript-eslint/eslint-plugin": ^5.61.0
+    "@typescript-eslint/parser": ^5.61.0
+    eslint: ^8.44.0
+    eslint-config-next: ^13.4.9
+    eslint-config-prettier: ^8.8.0
+    eslint-plugin-prettier: ^4.2.1
+    husky: ^8.0.3
+    is-ci: ^3.0.1
+    lint-staged: ^13.2.3
+    nodemon: ^3.0.1
+    prettier: ^3.0.0
+    turbo: ^1.10.7
+    typescript: 5.1.6
+  languageName: unknown
+  linkType: soft
+
 "meow@npm:^8.0.0":
   version: 8.1.2
   resolution: "meow@npm:8.1.2"
@@ -3839,32 +3943,6 @@ __metadata:
   checksum: a96865108c6c3b1b8e1d5e9f11843de1e077e57737602de1b82030815f311be11f96f09cce59bd5b903d0b29834733e5313f9301e3ed6d6f6fba2eae0df4298f
   languageName: node
   linkType: hard
-
-"monorepo@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "monorepo@workspace:."
-  dependencies:
-    "@commitlint/cli": ^17.6.6
-    "@commitlint/config-angular": ^17.6.6
-    "@sapphire/eslint-config": ^4.4.3
-    "@sapphire/prettier-config": ^1.4.5
-    "@sapphire/ts-config": ^4.0.0
-    "@types/node": ^18.16.19
-    "@typescript-eslint/eslint-plugin": ^5.61.0
-    "@typescript-eslint/parser": ^5.61.0
-    eslint: ^8.44.0
-    eslint-config-next: ^13.4.9
-    eslint-config-prettier: ^8.8.0
-    eslint-plugin-prettier: ^4.2.1
-    husky: ^8.0.3
-    is-ci: ^3.0.1
-    lint-staged: ^13.2.3
-    nodemon: ^3.0.1
-    prettier: ^3.0.0
-    turbo: ^1.10.7
-    typescript: 5.1.6
-  languageName: unknown
-  linkType: soft
 
 "ms@npm:2.0.0":
   version: 2.0.0
@@ -4636,7 +4714,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.2.0":
+"react-dom@npm:18.2.0, react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -5921,7 +5999,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:apps/web"
   dependencies:
-    "@monorepo/ui": "*"
+    "@memory/constants": "*"
+    "@memory/ui": "*"
     "@types/node": ^18.16.19
     "@types/react": ^18.2.14
     "@types/react-dom": ^18.2.6

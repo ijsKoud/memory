@@ -14,6 +14,11 @@ const TimeDivider: React.FC = () => (
 	</p>
 );
 
+/**
+ * A clock component which shows the time and date
+ * @param props The required props
+ * @returns
+ */
 export const Clock: React.FC<ClockProps> = ({ fullDay }) => {
 	const { date, day, seconds, month } = UseTime();
 	const timezone = date.getHours() - 12 >= 0 ? "pm" : "am";
@@ -22,7 +27,7 @@ export const Clock: React.FC<ClockProps> = ({ fullDay }) => {
 
 	return (
 		<Container>
-			<p className="capitalize -mb-3 text-4" style={NunitoSansFont.style}>
+			<p className="capitalize -mb-3 text-4 w-fit" style={NunitoSansFont.style}>
 				{month} the {date.getDate()}
 				{dateSuffix}
 			</p>
@@ -34,7 +39,7 @@ export const Clock: React.FC<ClockProps> = ({ fullDay }) => {
 					seconds.toString().padStart(2, "0")
 				]
 					.map<React.ReactNode>((time, key) => <p key={key}>{time}</p>)
-					.reduce((prev, curr) => [prev, <TimeDivider />, curr])}
+					.reduce((prev, curr, idx) => [prev, <TimeDivider key={idx * 10} />, curr])}
 
 				{!fullDay && (
 					<>

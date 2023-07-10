@@ -1,3 +1,9 @@
+const plugin = require("tailwindcss/plugin");
+
+const hocusPlugin = plugin((api) => {
+	api.addVariant("hocus", ["&:focus", "&:hover"]);
+});
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [],
@@ -9,8 +15,10 @@ module.exports = {
 				.map((_, key) => ({ [key + 1]: [(key + 1) * 4] }))
 				.reduce((a, b) => ({ ...a, ...b }), {}),
 			borderColor: {},
-			colors: {}
+			colors: {
+				"component-background": "#0F0F0F"
+			}
 		}
 	},
-	plugins: []
+	plugins: [hocusPlugin]
 };

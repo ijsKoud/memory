@@ -11,7 +11,8 @@
 	"dependencies": {
 		"@memory/constants": "*",
 		"@memory/hooks": "*",
-		"@memory/utils": "*"
+		"@memory/utils": "*",
+		"framer-motion": "^10.12.18"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.14",
