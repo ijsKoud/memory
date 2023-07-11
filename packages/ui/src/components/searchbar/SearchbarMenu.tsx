@@ -26,7 +26,7 @@ export const SearchbarMenu: React.FC<SearchbarMenuProps> = ({ input }) => {
 
 		window.addEventListener("keypress", handler);
 		return () => window.removeEventListener("keypress", handler);
-	}, []);
+	}, [input]);
 
 	return (
 		<Container role="menu" className="z-10 absolute mt-4 p-4 rounded-xl w-full bg-component-background flex flex-col gap-4">

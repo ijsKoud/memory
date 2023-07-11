@@ -8,9 +8,9 @@ export const Searchbar = () => {
 	const [input, setInput] = useState("");
 
 	const onInput = (event: FormEvent<HTMLInputElement>) => {
-		const input = event.currentTarget.value;
-		setInput(input);
-		setShowModal(Boolean(input));
+		const newInput = event.currentTarget.value;
+		setInput(newInput);
+		setShowModal(Boolean(newInput));
 	};
 
 	return (
