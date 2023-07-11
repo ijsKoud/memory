@@ -6,10 +6,12 @@
 	"types": "./src/index.ts",
 	"license": "MIT",
 	"scripts": {
-		"lint": "TIMING=1 eslint"
+		"lint": "TIMING=1 eslint",
+		"test": "vitest run"
 	},
 	"devDependencies": {
 		"eslint": "^8.44.0",
-		"typescript": "^5.1.6"
+		"typescript": "^5.1.6",
+		"vitest": "0.33.0"
 	}
 }

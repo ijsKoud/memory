@@ -13,6 +13,7 @@
 		"build": "turbo run build",
 		"start:dev": "turbo run dev --parallel",
 		"lint": "turbo run lint",
+		"test": "turbo run test",
 		"postinstall": "is-ci || husky install"
 	},
 	"resolutions": {
@@ -48,6 +49,8 @@
 		"@fortawesome/free-brands-svg-icons": "^6.4.0",
 		"@fortawesome/free-regular-svg-icons": "^6.4.0",
 		"@fortawesome/free-solid-svg-icons": "^6.4.0",
-		"@fortawesome/react-fontawesome": "latest"
+		"@fortawesome/react-fontawesome": "latest",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	}
 }

@@ -5,9 +5,15 @@
 			"dependsOn": ["^build"],
 			"outputs": ["dist/**", ".next/**"]
 		},
+
 		"lint": {
 			"outputs": []
 		},
+
+		"test": {
+			"outputs": []
+		},
+
 		"dev": {
 			"cache": false
 		}
