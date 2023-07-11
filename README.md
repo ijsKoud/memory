@@ -20,11 +20,11 @@
 
 ## Information
 
-Monorepo template for big projects 🏗️
+For the ones forgetting everything in 5 seconds (me)
 
 ## Install
 
-To use this template, you will need the following: `yarn` and `node >= 18.16.0`.
+Coming soon:tm: ig
 
 ## Author
 
