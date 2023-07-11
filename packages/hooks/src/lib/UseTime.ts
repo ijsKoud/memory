@@ -3,9 +3,13 @@ import { useEffect, useState } from "react";
 const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+/**
+ * Provides the current time and date
+ * @returns
+ */
 export function UseTime() {
 	const [dayParty, setDayParty] = useState("day");
-	const [date, setDate] = useState(new Date());
+	const [date, setDate] = useState(new Date(0));
 
 	const [seconds, setSeconds] = useState(0);
 	const [day, setDay] = useState(days[date.getDay()]);
@@ -33,7 +37,7 @@ export function UseTime() {
 	};
 
 	useEffect(() => {
-		updateDayParty();
+		updateTime();
 		const interval = setInterval(updateTime, 1e3);
 		return () => clearInterval(interval);
 	}, []);
