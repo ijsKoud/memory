@@ -2,7 +2,7 @@ import { NunitoFont, NunitoSansFont } from "@memory/constants";
 import { UseTime } from "@memory/hooks";
 import { Container } from "../../blocks";
 
-export interface ClockProps {
+export interface FullScreenClockProps {
 	/** Whether the clock is 12 hours or 24 hours */
 	fullDay?: boolean;
 }
@@ -18,7 +18,7 @@ const TimeDivider: React.FC = () => (
  * @param props The required props
  * @returns
  */
-export const FullScreenClock: React.FC<ClockProps> = ({ fullDay }) => {
+export const FullScreenClock: React.FC<FullScreenClockProps> = ({ fullDay }) => {
 	const { date, day, seconds, month } = UseTime();
 	const timezone = date.getHours() - 12 >= 0 ? "pm" : "am";
 	const dateSuffix = ["st", "nd", "rd", ...Array(31 - 3).fill("th")][date.getDate()];
