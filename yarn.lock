@@ -695,13 +695,17 @@ __metadata:
     "@memory/constants": "*"
     "@memory/hooks": "*"
     "@memory/utils": "*"
+    "@types/lodash": ^4.14.195
     "@types/react": ^18.2.14
     "@types/react-dom": ^18.2.6
     eslint: ^8.44.0
     framer-motion: ^10.12.18
+    lodash: ^4.17.21
     next: 13.4.9
     react: ^18.2.0
+    react-custom-scrollbars-2: ^4.5.0
     react-dom: 18.2.0
+    react-use-draggable-scroll: ^0.4.7
     typescript: ^5.1.6
   languageName: unknown
   linkType: soft
@@ -975,6 +979,13 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.195":
+  version: 4.14.195
+  resolution: "@types/lodash@npm:4.14.195"
+  checksum: 39b75ca635b3fa943d17d3d3aabc750babe4c8212485a4df166fe0516e39288e14b0c60afc6e21913cc0e5a84734633c71e617e2bd14eaa1cf51b8d7799c432e
   languageName: node
   linkType: hard
 
@@ -1353,6 +1364,13 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 25dfb94952386ecfb847e61934de04a4e7c2dc21c2e700fc4e2ef27ce78cb717700c4c4f279cd630bb4774948633c3859fc16063ec8573bda4568e0a312e6744
+  languageName: node
+  linkType: hard
+
+"add-px-to-style@npm:1.0.0":
+  version: 1.0.0
+  resolution: "add-px-to-style@npm:1.0.0"
+  checksum: 673831d81d86d717e3a9f4f644059476ca74990dd28310d9bffe6cb35fac8007865351d37a885af168a8613f5cdb054db728a3df19e9ee1457b75a668003c729
   languageName: node
   linkType: hard
 
@@ -2282,6 +2300,17 @@ __metadata:
   dependencies:
     esutils: ^2.0.2
   checksum: fd7673ca77fe26cd5cba38d816bc72d641f500f1f9b25b83e8ce28827fe2da7ad583a8da26ab6af85f834138cf8dae9f69b0cd6ab925f52ddab1754db44d99ce
+  languageName: node
+  linkType: hard
+
+"dom-css@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "dom-css@npm:2.1.0"
+  dependencies:
+    add-px-to-style: 1.0.0
+    prefix-style: 2.0.1
+    to-camel-case: 1.0.0
+  checksum: f61cc63e88771e1800ff4b7d98b17be2b311de984d94c3d3e0be692794502eb021d28c5c40ba08d4370a6d8bd96caf7a56d15c635451c2db1a2233c94ca0fcc0
   languageName: node
   linkType: hard
 
@@ -4112,7 +4141,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15":
+"lodash@npm:^4.17.15, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -4999,6 +5028,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"performance-now@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "performance-now@npm:2.1.0"
+  checksum: 534e641aa8f7cba160f0afec0599b6cecefbb516a2e837b512be0adbe6c1da5550e89c78059c7fabc5c9ffdf6627edabe23eb7c518c4500067a898fa65c2b550
+  languageName: node
+  linkType: hard
+
 "picocolors@npm:^1.0.0":
   version: 1.0.0
   resolution: "picocolors@npm:1.0.0"
@@ -5150,6 +5186,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prefix-style@npm:2.0.1":
+  version: 2.0.1
+  resolution: "prefix-style@npm:2.0.1"
+  checksum: 79c3559b74417a1552a91d2008d64cc7f326ff4fe8ed2053519663677238f28455bfda0dd935cb1d6690ac7281aff14361e15cfcf83ec263a8183827df7b2a90
+  languageName: node
+  linkType: hard
+
 "prelude-ls@npm:^1.2.1":
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
@@ -5221,7 +5264,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.5.10, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -5267,6 +5310,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"raf@npm:^3.1.0":
+  version: 3.4.1
+  resolution: "raf@npm:3.4.1"
+  dependencies:
+    performance-now: ^2.1.0
+  checksum: 50ba284e481c8185dbcf45fc4618ba3aec580bb50c9121385d5698cb6012fe516d2015b1df6dd407a7b7c58d44be8086108236affbce1861edd6b44637c8cd52
+  languageName: node
+  linkType: hard
+
+"react-custom-scrollbars-2@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "react-custom-scrollbars-2@npm:4.5.0"
+  dependencies:
+    dom-css: ^2.0.0
+    prop-types: ^15.5.10
+    raf: ^3.1.0
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: b264629c0bfcc292106540f802e4d4281fb4acfab93ab259dcde096b72f135a1be6f2fcf636478f9e9bce6e15a9c6eb624c799184bb478073bb7ace86588a1de
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:18.2.0, react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -5290,6 +5356,15 @@ __metadata:
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
+"react-use-draggable-scroll@npm:^0.4.7":
+  version: 0.4.7
+  resolution: "react-use-draggable-scroll@npm:0.4.7"
+  peerDependencies:
+    react: ">=16"
+  checksum: 446b6f9092c553b0f268cfa167d2fc007622ff7f5072da761a47b16e4234f6ee4061c2542dcd8a8a7f471502f67c342270d9bfa768fbe926b7a905232a1f8dd3
   languageName: node
   linkType: hard
 
@@ -6199,12 +6274,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"to-camel-case@npm:1.0.0":
+  version: 1.0.0
+  resolution: "to-camel-case@npm:1.0.0"
+  dependencies:
+    to-space-case: ^1.0.0
+  checksum: 2f74cfcffa58e8ddede7e01a03eda2cc3f0ab50efdad1d0f1092d55b4e499be43846d1f9087c458fa9efde4958e407738197d65858272c56c915b649b9ca1e62
+  languageName: node
+  linkType: hard
+
+"to-no-case@npm:^1.0.0":
+  version: 1.0.2
+  resolution: "to-no-case@npm:1.0.2"
+  checksum: 1d85326eeb89f9f3a805bf5b395bcabb8556e882350164c1faa10846076732f4cec02ac95b016e7d6bb2f55e448ce5dd227c7699ec43e387c705a5b2b1ee2963
+  languageName: node
+  linkType: hard
+
 "to-regex-range@npm:^5.0.1":
   version: 5.0.1
   resolution: "to-regex-range@npm:5.0.1"
   dependencies:
     is-number: ^7.0.0
   checksum: f76fa01b3d5be85db6a2a143e24df9f60dd047d151062d0ba3df62953f2f697b16fe5dad9b0ac6191c7efc7b1d9dcaa4b768174b7b29da89d4428e64bc0a20ed
+  languageName: node
+  linkType: hard
+
+"to-space-case@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "to-space-case@npm:1.0.0"
+  dependencies:
+    to-no-case: ^1.0.0
+  checksum: 157cebe3e98e7cb465fe1978cf26450cc8ea8e637a01039854fac7ed60ad074e5e18b32333cc5f30df81b81ca374d63df768cd4c1fa0fe672605f965376227f4
   languageName: node
   linkType: hard
 
