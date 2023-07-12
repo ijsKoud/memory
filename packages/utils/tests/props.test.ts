@@ -2,7 +2,7 @@ import { describe, test, expect } from "vitest";
 import { mergeClassNames } from "../src/lib/Props";
 
 describe("mergeClassNames function", () => {
-	test("HTTPLESS_URL should be a function", () => {
+	test("MergeClassNames should be a function", () => {
 		expect(mergeClassNames).toBeTypeOf("function");
 	});
 
