@@ -38,7 +38,7 @@ export function UseTime() {
 
 	useEffect(() => {
 		updateTime();
-		const interval = setInterval(updateTime, 1e3);
+		const interval = setInterval(updateTime, 5e2);
 		return () => clearInterval(interval);
 	}, []);
 

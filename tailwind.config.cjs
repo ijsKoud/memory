@@ -21,5 +21,5 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [hocusPlugin]
+	plugins: [hocusPlugin, require("tailwind-scrollbar")]
 };

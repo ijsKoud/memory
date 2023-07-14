@@ -32,7 +32,7 @@ export const Clock: React.FC<ClockProps> = ({ fullDay }) => {
 				{month} the {date.getDate()}
 				{dateSuffix}
 			</p>
-			<h1 className="capitalize text-10 font-semibold flex items-center gap-2" style={NunitoSansFont.style}>
+			<h1 className="capitalize text-10 font-bold flex items-center gap-2" style={NunitoSansFont.style}>
 				{[
 					day.slice(0, 3).toUpperCase(),
 					hours.toString().padStart(2, "0"),
