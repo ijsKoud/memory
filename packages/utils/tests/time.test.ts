@@ -7,22 +7,22 @@ describe("getDayPeriod function", () => {
 	});
 
 	test("time is 12:00", () => {
-		const date = new Date("Wed Aug 16 2023 12:00:00 GMT+0200 (Central European Summer Time)");
+		const date = new Date("Wed Aug 16 2023 12:00:00");
 		expect(getDayPeriod(date)).toBe("afternoon");
 	});
 
 	test("time is 17:00", () => {
-		const date = new Date("Wed Aug 16 2023 17:00:00 GMT+0200 (Central European Summer Time)");
+		const date = new Date("Wed Aug 16 2023 17:00:00");
 		expect(getDayPeriod(date)).toBe("afternoon");
 	});
 
 	test("time is 17:01", () => {
-		const date = new Date("Wed Aug 16 2023 17:01:00 GMT+0200 (Central European Summer Time)");
+		const date = new Date("Wed Aug 16 2023 17:01:00");
 		expect(getDayPeriod(date)).toBe("evening");
 	});
 
 	test("time is 11:59", () => {
-		const date = new Date("Wed Aug 16 2023 11:59:00 GMT+0200 (Central European Summer Time)");
+		const date = new Date("Wed Aug 16 2023 11:59:00");
 		expect(getDayPeriod(date)).toBe("morning");
 	});
 });
