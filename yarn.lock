@@ -713,6 +713,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@memory/hooks@workspace:packages/hooks"
   dependencies:
+    "@memory/utils": "*"
     "@types/react": ^18.2.20
     "@types/react-dom": ^18.2.7
     eslint: ^8.47.0

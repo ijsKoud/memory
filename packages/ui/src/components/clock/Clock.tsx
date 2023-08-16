@@ -2,7 +2,7 @@ import { NunitoFont, NunitoSansFont } from "@memory/constants";
 import { UseTime } from "@memory/hooks";
 import React from "react";
 import { Container } from "../../blocks";
-import { getAmPmHours, getDateSuffix, getTimePart } from "@memory/utils";
+import { getDateSuffix } from "@memory/utils";
 
 export interface ClockProps {
 	/** Whether the clock is 12 hours or 24 hours */
@@ -21,20 +21,19 @@ const TimeDivider: React.FC = () => (
  * @returns
  */
 export const Clock: React.FC<ClockProps> = ({ fullDay }) => {
-	const { date, day, seconds, month } = UseTime();
-	const timezone = getTimePart(date.getHours());
+	const { date, dayName, seconds, hours: _hours, timePartHours, timePart, monthName } = UseTime();
 	const dateSuffix = getDateSuffix(date.getDate());
-	const hours = fullDay ? date.getHours() : getAmPmHours(date.getHours(), timezone);
+	const hours = fullDay ? _hours : timePartHours;
 
 	return (
 		<Container>
 			<p className="capitalize -mb-3 text-4 w-fit" style={NunitoFont.style}>
-				{month} the {date.getDate()}
+				{monthName} the {date.getDate()}
 				{dateSuffix}
 			</p>
 			<h1 className="capitalize text-10 font-bold flex items-center gap-2" style={NunitoSansFont.style}>
 				{[
-					day.slice(0, 3).toUpperCase(),
+					dayName.slice(0, 3).toUpperCase(),
 					hours.toString().padStart(2, "0"),
 					date.getMinutes().toString().padStart(2, "0"),
 					seconds.toString().padStart(2, "0")
@@ -45,7 +44,7 @@ export const Clock: React.FC<ClockProps> = ({ fullDay }) => {
 				{!fullDay && (
 					<>
 						<TimeDivider />
-						<p className="text-indigo-400">{timezone.toUpperCase()}</p>
+						<p className="text-indigo-400">{timePart.toUpperCase()}</p>
 					</>
 				)}
 			</h1>

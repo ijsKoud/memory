@@ -12,11 +12,11 @@ export interface WelcomeTitleProps {
  * @returns
  */
 export const WelcomeTitle: React.FC<WelcomeTitleProps> = ({ name }) => {
-	const { dayParty } = UseTime();
+	const { period } = UseTime();
 
 	return (
 		<h1 className="capitalize text-10">
-			Good {dayParty} <strong>{name}</strong>
+			Good {period} <strong>{name}</strong>
 		</h1>
 	);
 };
