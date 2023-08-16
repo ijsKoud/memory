@@ -1,5 +1,31 @@
 import { describe, test, expect } from "vitest";
-import { getAmPmHours, getTimePart, getDateSuffix } from "../src/lib/Time";
+import { getDayPeriod, getAmPmHours, getTimePart, getDateSuffix } from "../src/lib/Time";
+
+describe("getDayPeriod function", () => {
+	test("getDayPeriod should be a function", () => {
+		expect(getDayPeriod).toBeTypeOf("function");
+	});
+
+	test("time is 12:00", () => {
+		const date = new Date("Wed Aug 16 2023 12:00:00 GMT+0200 (Central European Summer Time)");
+		expect(getDayPeriod(date)).toBe("afternoon");
+	});
+
+	test("time is 17:00", () => {
+		const date = new Date("Wed Aug 16 2023 17:00:00 GMT+0200 (Central European Summer Time)");
+		expect(getDayPeriod(date)).toBe("afternoon");
+	});
+
+	test("time is 17:01", () => {
+		const date = new Date("Wed Aug 16 2023 17:01:00 GMT+0200 (Central European Summer Time)");
+		expect(getDayPeriod(date)).toBe("evening");
+	});
+
+	test("time is 11:59", () => {
+		const date = new Date("Wed Aug 16 2023 11:59:00 GMT+0200 (Central European Summer Time)");
+		expect(getDayPeriod(date)).toBe("morning");
+	});
+});
 
 describe("getAmPmHours function", () => {
 	test("getAmPmHours should be a function", () => {
