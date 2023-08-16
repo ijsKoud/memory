@@ -1,39 +1,46 @@
+import { CALENDAR_DAYS, CALENDAR_MONTHS, getAmPmHours, getDayPeriod, getTimePart } from "@memory/utils";
 import { useEffect, useState } from "react";
-
-const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
 /**
  * Provides the current time and date
  * @returns
  */
 export function UseTime() {
-	const [dayParty, setDayParty] = useState("day");
+	const [seconds, setSeconds] = useState(0);
+	const [minutes, setMinutes] = useState(0);
+	const [hours, setHours] = useState(0);
+
+	const [day, setDay] = useState(0);
+	const [month, setMonth] = useState(0);
+
+	const [monthName, setMonthName] = useState("january");
+	const [dayName, setDayName] = useState("monday");
+	const [period, setPeriod] = useState("day");
+
 	const [date, setDate] = useState(new Date(0));
 
-	const [seconds, setSeconds] = useState(0);
-	const [day, setDay] = useState(days[date.getDay()]);
-	const [month, setMonth] = useState(months[date.getMonth()]);
+	const [timePart, setTimePart] = useState("am");
+	const [timePartHours, setTimePartHours] = useState(0);
 
 	const updateTime = () => {
 		const updatedDate = new Date();
 		setDate(updatedDate);
 
-		updateDayParty(updatedDate);
-		setDay(days[updatedDate.getDay()]);
-		setMonth(months[updatedDate.getMonth()]);
-	};
+		setSeconds(updatedDate.getSeconds());
+		setMinutes(updatedDate.getMinutes());
 
-	const updateDayParty = (time = date) => {
-		const hour = time.getHours();
-		const minute = time.getMinutes();
+		const updatedHours = updatedDate.getHours();
+		setHours(updatedHours);
 
-		const timeString = hour * 100 + minute;
-		const isMorning = timeString >= 0 && timeString < 12_00;
-		const isAfternoon = timeString >= 12_00 && timeString <= 17_00;
+		setDay(updatedDate.getDate());
+		setMonth(updatedDate.getMonth());
 
-		setSeconds(time.getSeconds());
-		setDayParty(isMorning ? "morning" : isAfternoon ? "afternoon" : "evening");
+		setDayName(CALENDAR_DAYS[updatedDate.getDay()]);
+		setMonthName(CALENDAR_MONTHS[updatedDate.getMonth()]);
+		setPeriod(getDayPeriod(updatedDate));
+
+		const updatedTimePart = getTimePart(updatedHours);
+		setTimePart(updatedTimePart);
+		setTimePartHours(getAmPmHours(updatedHours, updatedTimePart));
 	};
 
 	useEffect(() => {
@@ -42,5 +49,5 @@ export function UseTime() {
 		return () => clearInterval(interval);
 	}, []);
 
-	return { dayParty, date, month, day, seconds };
+	return { seconds, minutes, hours, day, month, period, monthName, dayName, timePart, timePartHours, date };
 }
