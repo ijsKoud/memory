@@ -1,9 +1,8 @@
 /**
- * Merges 2 classnames together
- * @param fixedClassName The component provided classname
- * @param inputClassName The classname provided via input
+ * Merges a set of classnames together
+ * @param classnames The classnames to merge
  * @returns
  */
-export function mergeClassNames(fixedClassName: string, inputClassName?: string | null): string {
-	return inputClassName ? `${fixedClassName} ${inputClassName}` : fixedClassName;
+export function mergeClassNames(...classnames: (string | null | undefined)[]): string {
+	return classnames.filter(Boolean).join(" ");
 }

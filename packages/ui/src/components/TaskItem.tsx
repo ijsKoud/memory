@@ -25,11 +25,15 @@ export interface TaskItemProps {
 
 export const TaskItem: React.FC<TaskItemProps> = ({ total, completed: _completed, title, background, icon, alt }) => {
 	const [completed, setCompleted] = useState(_completed);
+	const incrementCompleted = () => {
+		const incremented = completed + 1;
+		if (incremented <= total) setCompleted(incremented);
+	};
 
 	return (
 		<Button
 			aria-label={`Complete task: ${title}`}
-			onClick={() => setCompleted(completed + 1)}
+			onClick={incrementCompleted}
 			className="bg-gradient-to-r rounded-lg max-w-[350px] p-2 flex items-center w-fit"
 			style={{
 				// @ts-expect-error Variables aren't covered by TypeScript types

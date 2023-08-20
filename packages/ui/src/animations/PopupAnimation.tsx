@@ -8,6 +8,10 @@ interface Props {
 
 export type PopupAnimationProps = React.PropsWithChildren<HTMLMotionProps<"div"> & Props>;
 
+/**
+ * Wraps the provided children in a pop-up animation container
+ * @returns
+ */
 export const PopupAnimation: React.FC<PopupAnimationProps> = ({ children, visible, ...props }) => {
 	return (
 		<AnimatePresence mode="sync">
