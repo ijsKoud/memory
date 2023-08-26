@@ -42,7 +42,7 @@ const LandingPage: NextPage = () => {
 			</Container>
 
 			<Container>
-				<Container className="mt-6">
+				<Container className="mt-4">
 					<Searchbar />
 				</Container>
 
