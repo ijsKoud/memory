@@ -17,7 +17,7 @@
 		"postinstall": "is-ci || husky install"
 	},
 	"resolutions": {
-		"@typescript-eslint/eslint-plugin": "^6.7.4"
+		"@typescript-eslint/eslint-plugin": "^6.7.5"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.7.2",
